@@ -1,4 +1,5 @@
 import { Employee } from './employee';
+import { Position } from './modules/enums/Position';
 
 export class Company {
   private readonly NUM_OF_STARTING_EMPLOYEES: number = 10;
@@ -13,9 +14,6 @@ export class Company {
   }
 
   private init() {
-    console.log('Hi! I am a new Company!');
-    // CREATE RANDOM EMPLOYEES!
-
     while (this.employees.length < this.NUM_OF_STARTING_EMPLOYEES) {
       this.employees.push(this.createEmployee());
     }
@@ -32,7 +30,8 @@ export class Company {
   private randomEvent(): void {}
 
   private createEmployee(): Employee {
-    const newEmployee = new Employee('Scott', 'Bromander', 10000);
+    const newEmployee = new Employee();
+    console.log(newEmployee.getEmployeeInfo());
     return newEmployee;
   }
 }

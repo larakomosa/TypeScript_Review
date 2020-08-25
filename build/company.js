@@ -11,10 +11,8 @@ var Company = /** @class */ (function () {
         this.init();
     }
     Company.prototype.init = function () {
-        console.log('Hi! I am a new Company!');
-        // CREATE RANDOM EMPLOYEES!
         while (this.employees.length < this.NUM_OF_STARTING_EMPLOYEES) {
-            this.createEmployee();
+            this.employees.push(this.createEmployee());
         }
         console.log(this.employees);
         this.timer = setInterval(this.onTimerInterval.bind(this), 1000);
@@ -25,8 +23,11 @@ var Company = /** @class */ (function () {
     };
     Company.prototype.randomEvent = function () { };
     Company.prototype.createEmployee = function () {
-        var newEmployee = new employee_1.Employee('Scott', 'Bromander', 10000);
-        this.employees.push(newEmployee);
+        var newEmployee = new employee_1.Employee();
+        newEmployee.promote();
+        newEmployee.promote();
+        newEmployee.promote();
+        return newEmployee;
     };
     return Company;
 }());

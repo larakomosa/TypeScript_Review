@@ -76,6 +76,31 @@ var Employee = /** @class */ (function () {
     Employee.prototype.meritIncrease = function (percentage) {
         return this.salary * (1 + percentage);
     };
+    // GETTERS AND SETTERS
+    Employee.prototype.getFirstName = function () {
+        return this.firstName;
+    };
+    Employee.prototype.getLastName = function () {
+        return this.lastName;
+    };
+    Employee.prototype.getName = function () {
+        return this.firstName + " " + this.lastName;
+    };
+    Employee.prototype.getSalary = function () {
+        return this.salary;
+    };
+    Employee.prototype.setSalary = function (salary) {
+        this.salary = salary;
+    };
+    Employee.prototype.getPosition = function () {
+        return this.position;
+    };
+    Employee.prototype.setPosition = function (position) {
+        this.position = position;
+    };
+    Employee.prototype.getEmployeeInfo = function () {
+        return this.firstName + " " + this.lastName + " - " + this.position + " - " + this.salary;
+    };
     return Employee;
 }());
 exports.Employee = Employee;
